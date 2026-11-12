@@ -12,8 +12,7 @@ export default function Home() {
     <main>
       {/* はじめに */}
       <section className="mx-auto max-w-5xl px-5 pb-16 pt-20 sm:pt-28">
-        <p className="text-sm font-semibold text-primary-dark">{profile.title}</p>
-        <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+        <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
           {profile.lead}
         </h1>
         <p className="mt-6 max-w-2xl leading-relaxed text-muted">{profile.description}</p>
@@ -64,16 +63,25 @@ export default function Home() {
       {/* できること */}
       <section id="services" className="mx-auto max-w-5xl scroll-mt-16 px-5 py-20">
         <h2 className="text-2xl font-bold sm:text-3xl">できること</h2>
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-          {services.map((service) => (
-            <li key={service} className="flex gap-3 rounded-xl border border-line bg-surface p-4">
-              <span className="text-primary" aria-hidden>
-                ✓
-              </span>
-              <span>{service}</span>
-            </li>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {services.map((group) => (
+            <div key={group.title} className="rounded-2xl border border-line bg-surface p-6">
+              <h3 className="font-bold">
+                <span aria-hidden>{group.emoji}</span> {group.title}
+              </h3>
+              <ul className="mt-3 space-y-2">
+                {group.items.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-relaxed">
+                    <span className="text-primary" aria-hidden>
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       {/* 連絡先 */}
