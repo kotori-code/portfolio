@@ -1,3 +1,4 @@
+import { HeroVisual } from "@/components/HeroVisual";
 import { WorkCard } from "@/components/WorkCard";
 import { contacts, profile, services, strengths } from "@/data/profile";
 import { works } from "@/data/works";
@@ -20,27 +21,30 @@ export default function Home() {
   return (
     <main>
       {/* はじめに */}
-      <section className="mx-auto max-w-5xl px-5 pb-16 pt-20 sm:pt-28">
-        <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-          <Phrases phrases={profile.lead} />
-        </h1>
-        <p className="mt-6 max-w-2xl leading-relaxed text-muted">
-          <Phrases phrases={profile.description} />
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#works"
-            className="rounded-full bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary-dark"
-          >
-            作品を見る
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-line bg-surface px-6 py-3 font-medium transition hover:border-accent"
-          >
-            連絡先
-          </a>
+      <section className="mx-auto grid max-w-5xl items-center gap-12 px-5 pb-16 pt-16 sm:pt-24 md:grid-cols-[1.1fr_1fr]">
+        <div>
+          <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            <Phrases phrases={profile.lead} />
+          </h1>
+          <p className="mt-6 max-w-2xl leading-relaxed text-muted">
+            <Phrases phrases={profile.description} />
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#works"
+              className="rounded-full bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary-dark"
+            >
+              作品を見る
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full border border-line bg-surface px-6 py-3 font-medium transition hover:border-accent"
+            >
+              連絡先
+            </a>
+          </div>
         </div>
+        <HeroVisual />
       </section>
 
       {/* 強み */}

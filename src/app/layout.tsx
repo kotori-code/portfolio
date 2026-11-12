@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { KotoriIcon } from "@/components/KotoriIcon";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
@@ -31,7 +32,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <header className="sticky top-0 z-10 border-b border-line bg-background/90 backdrop-blur">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-            <Link href="/" className="font-bold tracking-tight">
+            <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
+              <KotoriIcon className="h-7 w-7" />
               {profile.name}
             </Link>
             <nav className="flex gap-5 text-sm text-muted">
