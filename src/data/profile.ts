@@ -2,9 +2,14 @@
 
 export const profile = {
   name: "kotori-code",
-  lead: "「ちょっと困った」を解決します。",
-  description:
-    "スマホで使いやすい Web アプリや LINE・Google ツール等への連携を、提案から運用マニュアルまで一貫して制作しています。",
+  // 文の途中で改行されないよう、区切りごとに配列にしている（画面では区切りの位置でだけ折り返す）
+  lead: ["「ちょっと困った」を", "解決します。"],
+  description: [
+    "スマホで使いやすい Web アプリや",
+    "LINE・Google ツール等への連携を、",
+    "提案から運用マニュアルまで",
+    "一貫して制作しています。",
+  ],
   githubUrl: "https://github.com/kotori-code",
 };
 

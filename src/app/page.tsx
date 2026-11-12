@@ -7,15 +7,26 @@ const availableContacts = contacts.filter((contact) => contact.href !== "");
 const directContacts = availableContacts.filter((contact) => contact.primary);
 const platformContacts = availableContacts.filter((contact) => !contact.primary);
 
+// 区切りごとに折り返す（日本語が文の途中で改行されるのを防ぐ）
+function Phrases({ phrases }: { phrases: string[] }) {
+  return phrases.map((phrase) => (
+    <span key={phrase} className="inline-block">
+      {phrase}
+    </span>
+  ));
+}
+
 export default function Home() {
   return (
     <main>
       {/* はじめに */}
       <section className="mx-auto max-w-5xl px-5 pb-16 pt-20 sm:pt-28">
         <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-          {profile.lead}
+          <Phrases phrases={profile.lead} />
         </h1>
-        <p className="mt-6 max-w-2xl leading-relaxed text-muted">{profile.description}</p>
+        <p className="mt-6 max-w-2xl leading-relaxed text-muted">
+          <Phrases phrases={profile.description} />
+        </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="#works"
@@ -47,19 +58,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 作品 */}
-      <section id="works" className="scroll-mt-16 border-y border-line bg-surface/60 py-20">
-        <div className="mx-auto max-w-5xl px-5">
-          <h2 className="text-2xl font-bold sm:text-3xl">作品</h2>
-          <p className="mt-2 text-muted">画面の写真はサンプルのデータです。</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {works.map((work, i) => (
-              <WorkCard key={work.slug} work={work} priority={i < 3} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* できること */}
       <section id="services" className="mx-auto max-w-5xl scroll-mt-16 px-5 py-20">
         <h2 className="text-2xl font-bold sm:text-3xl">できること</h2>
@@ -81,6 +79,19 @@ export default function Home() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 作品 */}
+      <section id="works" className="scroll-mt-16 border-y border-line bg-surface/60 py-20">
+        <div className="mx-auto max-w-5xl px-5">
+          <h2 className="text-2xl font-bold sm:text-3xl">作品</h2>
+          <p className="mt-2 text-muted">画面の写真はサンプルのデータです。</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {works.map((work, i) => (
+              <WorkCard key={work.slug} work={work} priority={i < 3} />
+            ))}
+          </div>
         </div>
       </section>
 

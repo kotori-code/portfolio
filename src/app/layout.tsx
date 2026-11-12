@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: profile.name,
     template: `%s | ${profile.name}`,
   },
-  description: profile.description,
+  description: profile.description.join(""),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -35,11 +35,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               {profile.name}
             </Link>
             <nav className="flex gap-5 text-sm text-muted">
-              <Link href="/#works" className="hover:text-ink">
-                作品
-              </Link>
               <Link href="/#services" className="hover:text-ink">
                 できること
+              </Link>
+              <Link href="/#works" className="hover:text-ink">
+                作品
               </Link>
               <Link href="/#contact" className="hover:text-ink">
                 連絡先
