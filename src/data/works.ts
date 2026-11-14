@@ -85,6 +85,58 @@ export const works: Work[] = [
     ],
   },
   {
+    slug: "blog-autopost",
+    title: "ブログ記事の下書き自動作成",
+    catchphrase: "キーワードを入れるだけで、AI が記事の下書きを作り WordPress に保存。",
+    summary:
+      "SEO 対策のブログ記事づくりに 1 本 3 時間かけていた会社向けの仕組みです。スプレッドシートにキーワードを入れてチェックを付けると、AI がタイトル案と 2,000〜3,000 字の下書きを作り、WordPress に「下書き」として保存します。公開は担当者が確認してから行います。",
+    notice:
+      "課題の疑似案件として、提案書・要件定義・見積もりから開発・テスト・納品資料までを一通り制作しました。実在のお客様・WordPress サイトはありません（WordPress への保存は、本物と同じ応答をする仮のサーバーで確認しています）。",
+    problem:
+      "SEO 対策のブログを週 3 本、ネタ出しから執筆まで 1 本 3 時間（週 9 時間）かけている。キーワードはスプレッドシートで管理しているが、記事にする作業はすべて手作業。",
+    features: [
+      "キーワードから、切り口の違うタイトルを 5 案作成",
+      "選んだタイトルで、導入 → 見出し 3 つ → まとめの下書きと、検索結果に出る説明文（120 字以内）を作成",
+      "WordPress の REST API で「下書き」として保存し、状態・下書きの URL をシートに書き込む",
+      "文字数・トーン・使わない表現・お手本の記事を、シートから変更できる",
+      "うまくいかないときは、理由を日本語でシートに表示",
+    ],
+    highlights: [
+      {
+        title: "記事の質はテストで決める",
+        body: "記事を 5 本作って確かめました。安いモデルでは字数が半分ほどで、お手本と同じ内容や根拠のない事例が出たため、原因を切り分け、モデルを変えて要件を満たしました。費用は 1 本約 7 円です。",
+      },
+      {
+        title: "自動では公開しない安全な設計",
+        body: "AI の誤りがそのまま公開されないよう、保存は下書きまで。WordPress には下書きしか作れない「寄稿者」の専用ユーザーで接続し、鍵が漏れても記事を公開されないようにしました。",
+      },
+      {
+        title: "サイトが無くても確かめられる",
+        body: "本物と同じ応答をする仮の WordPress を用意し、送信の中身と、パスワード違い・権限不足などのエラー 6 通りを確かめました。",
+      },
+      {
+        title: "提案から納品資料まで一式",
+        body: "提案書・要件定義書・WBS・構成図・テスト報告書に加え、API キー設定手順書・画面写真つきの使い方マニュアル・トラブルシューティングの 3 点を作成しました。",
+      },
+    ],
+    tech: ["Google Apps Script", "Google スプレッドシート", "OpenAI API", "WordPress REST API", "Node.js（テスト）"],
+    role: "提案書・要件定義・見積もり／設計／開発／テスト／納品資料",
+    facts: [
+      { label: "記事 1 本の費用", value: "約 7 円（月 13 本で約 100 円・試算）" },
+      { label: "作成にかかる時間", value: "タイトル案 約 30 秒・本文 1〜2 分" },
+      { label: "開発工数", value: "見積もり 45 時間 → 8 時間で完了" },
+    ],
+    repoUrl: "https://github.com/kotori-code/blog-draft-autopost",
+    tags: ["AI", "業務効率化", "提案〜納品"],
+    cover: { emoji: "📝", from: "#2271B1", to: "#8EC5EA" },
+    screenshots: [
+      { src: "/works/blog-autopost/architecture.png", alt: "スプレッドシート・Apps Script・OpenAI・WordPress のつながりを示した構成図", width: 1800, height: 1130, caption: "構成図" },
+      { src: "/works/blog-autopost/titles.png", alt: "キーワードから作られたタイトル 5 案と、採用する案の番号", width: 669, height: 232, caption: "キーワードから作ったタイトル 5 案" },
+      { src: "/works/blog-autopost/created.png", alt: "作成済のステータス・タイトル・WordPress の URL・説明文が入った行", width: 878, height: 202, caption: "下書きの保存後に入る URL と説明文" },
+      { src: "/works/blog-autopost/settings.png", alt: "文字数・読者・トーンなどを変えられる設定シート", width: 950, height: 368, caption: "書き方を変えられる設定シート" },
+    ],
+  },
+  {
     slug: "pickup",
     title: "送迎当番",
     catchphrase: "保育園・習い事の「今日は誰が送る？」を、家族で 1 つの画面に。",
