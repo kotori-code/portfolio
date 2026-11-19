@@ -24,7 +24,6 @@ export function WorkCard({ work, priority = false }: { work: Work; priority?: bo
         </div>
         <h3 className="text-lg font-bold leading-snug group-hover:text-primary-dark">{work.title}</h3>
         <p className="text-sm leading-relaxed text-muted">{work.catchphrase}</p>
-        {work.notice && <p className="text-xs text-accent">※ 想定案件</p>}
         <p className="mt-auto pt-2 text-sm font-medium text-primary-dark">詳しく見る →</p>
       </div>
     </Link>
