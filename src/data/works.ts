@@ -182,6 +182,7 @@ export const works: Work[] = [
     tags: ["AI", "業務効率化", "提案〜納品"],
     cover: { emoji: "📚", from: "#4F46E5", to: "#A5B4FC" },
     screenshots: [
+      { src: "/works/doc-search-ai/chat.png", alt: "質問への回答と出典（文書名・ページ・元の PDF へのリンク）、文書にない質問への「見つかりませんでした」の返答が並んだチャット画面", width: 622, height: 612, caption: "チャット画面（出典付きの回答と、文書にないときの返答）" },
       { src: "/works/doc-search-ai/architecture.png", alt: "社員の質問が画面とサーバーを通り、文書の保管庫で近い文章を探して AI が答える流れを示した構成図", width: 1520, height: 904, caption: "構成図（質問の流れと、文書が入る流れ）" },
     ],
   },
