@@ -72,7 +72,7 @@ export const strengths = [
   {
     emoji: "⚡",
     title: "AI を活用して速く",
-    body: "Claude Code などの AI を活用し、見積もりより短い期間で形にします。設計・テスト・説明資料は自分で確認しています。",
+    body: "Claude Code などの AI を活用し、短い期間で形にします。設計・テスト・説明資料は自分で確認しています。",
   },
 ];
 
