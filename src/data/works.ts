@@ -119,7 +119,7 @@ export const works: Work[] = [
       },
     ],
     tech: ["Google Apps Script", "Google スプレッドシート", "OpenAI API", "WordPress REST API", "Node.js（テスト）"],
-    role: "提案書・要件定義・見積もり／設計／開発／テスト／納品資料",
+    role: "要件定義・提案書・見積もり／設計／開発／テスト／納品資料",
     facts: [
       { label: "記事 1 本の費用", value: "約 7 円（月 13 本で約 100 円・試算）" },
       { label: "作成にかかる時間", value: "タイトル案 約 30 秒・本文 1〜2 分" },
@@ -171,7 +171,7 @@ export const works: Work[] = [
       },
     ],
     tech: ["Next.js 16", "TypeScript", "Supabase（PostgreSQL・pgvector・Storage）", "OpenAI API", "Vercel", "Vitest"],
-    role: "要件定義・提案書・見積もり／設計／開発／精度の評価／納品資料",
+    role: "要件定義・提案書・見積もり／設計／開発／テスト（精度の評価）／納品資料／次の段階の提案",
     facts: [
       { label: "精度", value: "評価用 50 問中 48 問（96%）／目標 80%" },
       { label: "対象の文書", value: "PDF（Word・Confluence は Phase 2 で提案）" },
@@ -220,7 +220,7 @@ export const works: Work[] = [
       },
     ],
     tech: ["Next.js 16", "TypeScript", "Supabase（PostgreSQL・Auth・Realtime）", "OpenAI API（本番は Claude API を想定）", "Vercel", "Vitest"],
-    role: "要件定義・提案書・見積もり／設計／開発／テスト・セキュリティの確認／納品資料／Phase 2 の提案",
+    role: "要件定義・提案書・見積もり／設計／開発／テスト（セキュリティの確認を含む）／納品資料／次の段階の提案",
     tags: ["AI", "EC", "提案〜納品"],
     cover: { emoji: "💬", from: "#1F6F5C", to: "#86C5B4" },
     screenshots: [

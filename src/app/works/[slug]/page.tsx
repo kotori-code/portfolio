@@ -129,7 +129,7 @@ export default async function WorkPage(props: PageProps<"/works/[slug]">) {
       </Section>
 
       {work.role && (
-        <Section title="担当範囲">
+        <Section title="対応した作業">
           <p>{work.role}</p>
         </Section>
       )}
